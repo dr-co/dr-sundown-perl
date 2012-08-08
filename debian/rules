@@ -5,6 +5,16 @@ version = $(shell dpkg-parsechangelog|grep ^Version|awk '{print $$2}'   \
     |sed 's/-[[:digit:]]\+$$//' \
 )
 
+
+override_dh_clean:
+	dh_clean
+	rm -f *.tar.gz
+
+
+override_dh_install:
+	dh_install
+	make tardist
+
 tarball: clean
 	cd .. && tar --exclude=.git --exclude=debian    \
             -czvf $(package)_$(version).orig.tar.gz \

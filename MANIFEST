@@ -25,3 +25,12 @@ sundown/src/stack.h
 sundown/sundown.def
 t/010-use_ok.t
 xs/Sundown.xs
+inc/Module/Install/XSUtil.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/WriteAll.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/Can.pm
+inc/Module/Install.pm

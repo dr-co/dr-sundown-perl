@@ -2,13 +2,15 @@ Source: libdr-sundown-perl
 Section: perl
 Priority: optional
 Maintainer: Dmitry E. Oboukhov <unera@debian.org>
-Build-Depends: debhelper (>= 8)
+Build-Depends: debhelper (>= 8),
+ libmodule-install-xsutil-perl,
+ libmodule-install-perl
 Standards-Version: 3.9.3
 Homepage: http://search.cpan.org/dist/DR-SunDown/
 
 Package: libdr-sundown-perl
 Architecture: any
-Depends: ${misc:Depends}, ${perl:Depends}, ${shlib:Depends}
+Depends: ${misc:Depends}, ${perl:Depends}, ${shlibs:Depends}
 Description: perl bindings for sundown
  SunDown is a fast lightweight library for converting markdown
  text to html.
