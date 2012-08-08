@@ -1,5 +1,4 @@
 lib/DR/SunDown.pm
-lib/DR/SunDown/XS.pm
 Makefile.PL
 sundown/examples/smartypants.c
 sundown/examples/sundown.c
