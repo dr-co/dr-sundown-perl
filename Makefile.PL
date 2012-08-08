@@ -5,7 +5,7 @@ cc_src_paths 'sundown/src', 'sundown/html', 'xs';
 cc_include_paths 'sundown/src', 'sundown/html';
 
 name        'DR-SunDown';
-all_from    'lib/DR/SunDown/XS.pm';
+all_from    'lib/DR/SunDown.pm';
 license     'perl';
 
 WriteAll;
