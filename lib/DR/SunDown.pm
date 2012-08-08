@@ -1,12 +1,17 @@
 =head1 NAME
 
-DR::Sundown - perl bindings for L<sundown|https://github.com/vmg/sundown.git>
+DR::SunDown - perl bindings for sundown
 
 =head1 SYNOPSIS
 
-    use DR::Sundown;
+    use DR::SunDown;
     my $markdown = `cat README.markdown`;
     my $html = markdown2html $markdown;
+
+=head1 DESCRIPTION
+
+The library is a perl binding for C-library
+L<sundown|https://github.com/vmg/sundown.git>.
 
 =head1 EXPORTS
 

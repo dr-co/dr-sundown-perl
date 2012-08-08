@@ -1,0 +1,2 @@
+version=3
+http://search.cpan.org/dist/DR-SunDown/   .*/DR-SunDown-v?(\d[\d.-]+)\.(?:tar(?:\.gz|\.bz2)?|tgz|zip)$
