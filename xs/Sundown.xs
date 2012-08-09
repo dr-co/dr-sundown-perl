@@ -21,6 +21,7 @@ SV * markdown2html(mdata)
 	struct sd_callbacks callbacks;
 	struct html_renderopt options;
 	struct sd_markdown *markdown;
+	int input_is_utf8;
 
 
     CODE:
@@ -28,6 +29,8 @@ SV * markdown2html(mdata)
 		RETVAL = mdata;
 		return;
 	}
+
+	input_is_utf8 = SvUTF8(mdata);
 
 	ptr = SvPV(mdata, len);
 	ob = bufnew(OUTPUT_UNIT);
@@ -40,7 +43,9 @@ SV * markdown2html(mdata)
 	if (!ob->size) {
 		RETVAL = newSVpvn("", 0);
 	} else {
-		RETVAL = newSVpvn(ob->data, ob->size);
+                RETVAL = newSVpvn(ob->data, ob->size);
+                if ( input_is_utf8 && !SvUTF8(RETVAL) )
+                    SvUTF8_on(RETVAL);
 	}
 	bufrelease(ob);
 
