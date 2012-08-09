@@ -17,7 +17,7 @@ SV * markdown2html(mdata)
     PREINIT:
 	struct buf *ob;
 	STRLEN len;
-	char *ptr;
+	const char * ptr;
 	struct sd_callbacks callbacks;
 	struct html_renderopt options;
 	struct sd_markdown *markdown;
@@ -37,13 +37,13 @@ SV * markdown2html(mdata)
 
 	sdhtml_renderer(&callbacks, &options, 0);
 	markdown = sd_markdown_new(0, 16, &callbacks, &options);
-	sd_markdown_render(ob, ptr, len, markdown);
+	sd_markdown_render(ob, (uint8_t *)ptr, len, markdown);
 	sd_markdown_free(markdown);
 
 	if (!ob->size) {
 		RETVAL = newSVpvn("", 0);
 	} else {
-                RETVAL = newSVpvn(ob->data, ob->size);
+                RETVAL = newSVpvn((char *)ob->data, ob->size);
                 if ( input_is_utf8 && !SvUTF8(RETVAL) )
                     SvUTF8_on(RETVAL);
 	}
