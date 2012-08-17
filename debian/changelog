@@ -1,6 +1,7 @@
-libdr-sundown-perl (0.02-1) UNRELEASED; urgency=low
+libdr-sundown-perl (0.02-1) unstable; urgency=low
 
   * New version: the module supports utf8 strings.
+  * Debian upload, closes: #685124.
 
  -- Dmitry E. Oboukhov <unera@debian.org>  Thu, 09 Aug 2012 09:31:25 +0400
 
