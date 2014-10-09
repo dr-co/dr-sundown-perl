@@ -1,3 +1,9 @@
+libdr-sundown-perl (0.02-2) nowtaxi; urgency=medium
+
+  * Rebuild for nowtaxi, Perl 5.14.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Thu, 09 Oct 2014 20:31:10 +0400
+
 libdr-sundown-perl (0.02-1) unstable; urgency=low
 
   * New version: the module supports utf8 strings.
