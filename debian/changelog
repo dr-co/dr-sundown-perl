@@ -1,3 +1,9 @@
+libdr-sundown-perl (0.04-1) nowtaxi; urgency=low
+
+  * Revert to use git-submodule.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 18 Oct 2016 01:10:45 +0300
+
 libdr-sundown-perl (0.03-1) nowtaxi; urgency=medium
 
   * Don't use submodule.
