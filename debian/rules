@@ -2,7 +2,7 @@
 
 package = $(shell dpkg-parsechangelog|grep ^Source|awk '{print $$2}')
 version = $(shell dpkg-parsechangelog|grep ^Version|awk '{print $$2}'   \
-    |sed 's/-[[:digit:]]\+$$//' \
+    |sed 's/-[[:digit:]].\+$$//' \
 )
 
 
