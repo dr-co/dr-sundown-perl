@@ -18,6 +18,7 @@ before_install:
   - dpkg-parsechangelog
 
 script:
+  - set -e
   - wget -O- http://travis.debian.net/script.sh | sh -
   - ls -lR
   - pwd
