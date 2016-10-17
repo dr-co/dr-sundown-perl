@@ -2,7 +2,7 @@
 
 package = $(shell dpkg-parsechangelog|grep ^Source|awk '{print $$2}')
 version = $(shell dpkg-parsechangelog|grep ^Version|awk '{print $$2}'   \
-    |sed 's/-[[:digit:]].\+$$//' \
+    |sed -E 's/-.*//' \
 )
 
 
@@ -16,10 +16,10 @@ override_dh_install:
 	make tardist
 
 tarball: clean
-	cd .. && tar --exclude=.git --exclude=debian    \
-	    --transform='s,^$(shell basename $(CURDIR)),$(package)-$(version),'\
-            -czvf $(package)_$(version).orig.tar.gz \
-            $(shell basename $(CURDIR))
+	tar --exclude=.git --exclude=debian    \
+	    --transform='s,^.,$(package)-$(version),'\
+            -czvf ../$(package)_$(version).orig.tar.gz \
+            .
 
 %:
 	dh $@
