@@ -8,6 +8,7 @@ env:
     - TRAVIS_DEBIAN_DISTRIBUTION=wheezy DPUT=1
     - TRAVIS_DEBIAN_DISTRIBUTION=jessie DPUT=1
     - TRAVIS_DEBIAN_DISTRIBUTION=sid DPUT=0
+    - TRAVIS_DEBIAN_GIT_ON_BUILDPACKAGE="fakeroot debian/rules clean tarball"
 
 
 before_install:
