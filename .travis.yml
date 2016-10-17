@@ -19,7 +19,8 @@ before_install:
 
 script:
   - set -e
-  - wget -O- http://travis.debian.net/script.sh | sh -
+#  - wget -O- http://travis.debian.net/script.sh | sh -
+  - wget -O- https://raw.githubusercontent.com/unera/travis.debian.net/gh-pages/script.sh | sh -
   - ls -lR
   - pwd
   - echo $TRAVIS_DEBIAN_DISTRIBUTION
