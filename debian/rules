@@ -1,4 +1,5 @@
 #!/usr/bin/make -f
+# vim: set noet :
 
 package = $(shell dpkg-parsechangelog|grep ^Source|awk '{print $$2}')
 version = $(shell dpkg-parsechangelog|grep ^Version|awk '{print $$2}'   \
@@ -8,6 +9,11 @@ version = $(shell dpkg-parsechangelog|grep ^Version|awk '{print $$2}'   \
 override_dh_clean:
 	rm -fv DR*.tar.gz
 	dh_clean
+
+
+override_dh_auto_configure:
+	pwd
+	dh_auto_configure
 
 override_dh_install:
 	dh_install
