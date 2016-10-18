@@ -8,7 +8,6 @@ version = $(shell dpkg-parsechangelog|grep ^Version|awk '{print $$2}'   \
 
 override_dh_clean:
 	dh_clean
-	rm -f *.tar.gz
 
 
 override_dh_install:
