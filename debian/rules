@@ -20,9 +20,10 @@ override_dh_install:
 	make tardist
 
 tarball: clean
-	tar --exclude=.git --exclude=debian    \
-	    --transform='s,^.,$(package)-$(version),'\
-            -czf ../$(package)_$(version).orig.tar.gz \
+	pwd
+	tar --exclude=.git --exclude=debian		\
+	    --transform='s,^.,$(package)-$(version),'	\
+            -czf ../$(package)_$(version).orig.tar.gz	\
             .
 	tar -tzf ../$(package)_$(version).orig.tar.gz
 
