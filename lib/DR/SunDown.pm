@@ -52,7 +52,7 @@ at your option, any later version of Perl 5 you may have available.
 package DR::SunDown;
 use Carp ();
 use base qw(Exporter);
-our $VERSION = '0.02';
+our $VERSION = '0.06';
 our @EXPORT = qw(markdown2html);
 
 require XSLoader;
