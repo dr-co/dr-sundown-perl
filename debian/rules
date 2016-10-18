@@ -18,8 +18,10 @@ override_dh_install:
 tarball: clean
 	tar --exclude=.git --exclude=debian    \
 	    --transform='s,^.,$(package)-$(version),'\
-            -czvf ../$(package)_$(version).orig.tar.gz \
+            -czf ../$(package)_$(version).orig.tar.gz \
             .
+	tar -tzf ../$(package)_$(version).orig.tar.gz
+
 
 %:
 	dh $@
